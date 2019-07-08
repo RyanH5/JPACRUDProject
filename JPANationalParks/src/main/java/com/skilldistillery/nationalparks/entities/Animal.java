@@ -19,7 +19,6 @@ public class Animal {
 	@Column(name="image")
 	private String image;
 
-	@Column(name="description")
 	private String description;
 
 	public int getId() {
