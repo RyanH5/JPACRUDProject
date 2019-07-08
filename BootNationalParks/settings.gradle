@@ -4,3 +4,4 @@ pluginManagement {
 	}
 }
 rootProject.name = 'BootNationalParks'
+includeFlat 'JPANationalParks'
