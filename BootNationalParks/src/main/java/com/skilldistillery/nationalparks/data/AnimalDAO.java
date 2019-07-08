@@ -1,10 +1,11 @@
 package com.skilldistillery.nationalparks.data;
 
+import java.util.List;
+
 import com.skilldistillery.nationalparks.entities.Animal;
 
 public interface AnimalDAO {
+	Animal findById(int id);
+	List<Animal> findAll();
 
-	public Animal create(Animal Animal);
-	public Animal update(int id, Animal Animal);
-	public boolean destroy(int id);
 }

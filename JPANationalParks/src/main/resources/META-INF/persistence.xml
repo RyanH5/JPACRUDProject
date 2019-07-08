@@ -8,7 +8,7 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
     
-  <!--   <class>com.skilldistillery.jpavideostore.entities.Actor</class> -->
+<class>com.skilldistillery.nationalparks.entities.Animal</class>
 
 
     <properties>
