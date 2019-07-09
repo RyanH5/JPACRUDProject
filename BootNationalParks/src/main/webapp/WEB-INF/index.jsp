@@ -8,16 +8,23 @@
 <title>My Animals</title>
 </head>
 <body>
-<form action="getFilm.do" method="GET">
+<form action="getAnimal.do" method="GET">
   Animal ID: <input type="text" name="aid" />
   <input type="submit" value="Show Animal" />
 </form>
   <hr>
   <ul>
   	<c:forEach var="a" items="${animals}">
-  		<li><a href="getAnimal.do?fid=${a.id}">${a.name }</a></li>
+  		<li><a href="getAnimal.do?aid=${a.id}">${a.name}</a></li>
   	</c:forEach>
   </ul>
+  
+  <hr>
+  
+  <h2>What's That?  You found a new animal in Yellowstone?!?!</h2>
+  <form action="getAnimalAdd.do" method="GET">
+  	<input type="submit" value="Add new animal">
+  </form>
 
 </body>
 </html>
