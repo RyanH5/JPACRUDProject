@@ -35,4 +35,14 @@ public class AnimalDAOImpl implements AnimalDAO{
 		return animal;
 	}
 
+	@Override
+	public Animal updateAnimal(Integer id, Animal a) {
+		Animal animal = em.find(Animal.class, id);
+		animal.setName(animal.getName());
+		animal.setDescription(animal.getDescription());
+		animal.setImage(animal.getImage());
+		em.persist(animal);
+		return animal;
+	}
+
 }
