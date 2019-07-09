@@ -47,6 +47,24 @@ public class AnimalController {
 		
 		return "animal/show";
 	}
+	
+	@RequestMapping(path = "getUpdatedAnimal.do")
+	public String updateAnimal(@RequestParam("aid") Integer id, Model model) {
+		
+		model.addAttribute("animal", dao.findById(id));
+		return "animal/update";
+	}
+
+	@RequestMapping(path = "displayUpdatedAnimal.do")
+	public String displayUpdatedAnimal(@RequestParam("aid") Integer id,
+			@RequestParam("name") String name,
+			@RequestParam("description") String description,
+			@RequestParam("image") String image, Model model) {
+		model.addAttribute("animal", dao.updateAnimal(id, new Animal(name, description, image)));
+		
+		return "animal/show";
+	}
+	
 		
 	
 

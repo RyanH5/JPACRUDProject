@@ -8,5 +8,6 @@ public interface AnimalDAO {
 	Animal findById(int id);
 	List<Animal> findAll();
 	Animal addNewAnimal(Animal animal);
+	Animal updateAnimal(Integer id, Animal animal);
 
 }
