@@ -8,7 +8,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
 war {
   enabled = true
-  archiveName = "BootNationalParksApplication.war"     // Our app name, as defined in settings.gradle
+  archiveName = "BootNationalParks.war"     // Our app name, as defined in settings.gradle
   destinationDir = file("./")         // Project root directory
 }
 

@@ -11,8 +11,8 @@
 	<h1>Ok, Steve Irwin. You tell me</h1>
 
 
-	<form action="displayUpdatedAnimal.do" method="GET">
-		<input type="hidden" name="aid" value="${animal.id}" /> 
+	<form action="displayUpdatedAnimal.do" modelAttribute="animal" method="POST">
+		<input type="hidden" name="id" value="${animal.id}" /> 
 		<label for="name">Name:</label> 
 			<input type="text" name="name" value="${animal.name}"> 
 			<br> 
