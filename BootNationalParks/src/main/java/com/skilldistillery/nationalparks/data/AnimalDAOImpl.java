@@ -45,4 +45,10 @@ public class AnimalDAOImpl implements AnimalDAO{
 		return animal;
 	}
 
+	@Override
+	public void deleteAnimal(int id) {
+		em.remove(em.find(Animal.class, id));
+		
+	}
+
 }

@@ -65,6 +65,14 @@ public class AnimalController {
 		return "animal/show";
 	}
 	
+	@RequestMapping(path="getDeletedAnimal.do")
+	public String deleteAnimal(@RequestParam("aid") Integer id, Model model) {
+		dao.deleteAnimal(id);
+		List<Animal> animals = dao.findAll();
+		model.addAttribute("animals", animals);
+		return "index";
+	}
+	
 		
 	
 
