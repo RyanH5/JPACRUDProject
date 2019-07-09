@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nationalparks.data.AnimalDAO;
 import com.skilldistillery.nationalparks.entities.Animal;
@@ -55,12 +57,11 @@ public class AnimalController {
 		return "animal/update";
 	}
 
-	@RequestMapping(path = "displayUpdatedAnimal.do")
-	public String displayUpdatedAnimal(@RequestParam("aid") Integer id,
-			@RequestParam("name") String name,
-			@RequestParam("description") String description,
-			@RequestParam("image") String image, Model model) {
-		model.addAttribute("animal", dao.updateAnimal(id, new Animal(name, description, image)));
+	@RequestMapping(path = "displayUpdatedAnimal.do", method = RequestMethod.POST)
+	public String displayUpdatedAnimal(Animal a) {
+		Animal updated = dao.updateAnimal(a);
+		ModelAndView model = new ModelAndView();
+		model.addObject("animal", updated);
 		
 		return "animal/show";
 	}
