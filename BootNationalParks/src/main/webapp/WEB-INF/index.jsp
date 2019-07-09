@@ -18,6 +18,13 @@
   		<li><a href="getAnimal.do?aid=${a.id}">${a.name}</a></li>
   	</c:forEach>
   </ul>
+  
+  <hr>
+  
+  <h2>What's That?  You found a new animal in Yellowstone?!?!</h2>
+  <form action="getAnimalAdd.do" method="GET">
+  	<input type="submit" value="Add new animal">
+  </form>
 
 </body>
 </html>

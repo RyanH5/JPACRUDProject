@@ -29,4 +29,10 @@ public class AnimalDAOImpl implements AnimalDAO{
 		return Animals;
 	}
 
+	@Override
+	public Animal addNewAnimal(Animal animal) {
+		em.persist(animal);		
+		return animal;
+	}
+
 }

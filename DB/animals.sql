@@ -23,8 +23,8 @@ DROP TABLE IF EXISTS `animal` ;
 CREATE TABLE IF NOT EXISTS `animal` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
-  `description` VARCHAR(300) NULL,
-  `image` VARCHAR(500) NULL,
+  `description` VARCHAR(2000) NULL,
+  `image` VARCHAR(2000) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

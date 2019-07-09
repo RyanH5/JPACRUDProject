@@ -13,13 +13,24 @@ public class Animal {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="name")
 	private String name;
 	
-	@Column(name="image")
 	private String image;
 
 	private String description;
+
+
+	public Animal() {
+		super();
+	}
+
+	public Animal(String name, String image, String description) {
+		super();
+//		this.id = id;
+		this.name = name;
+		this.image = image;
+		this.description = description;
+	}
 
 	public int getId() {
 		return id;
