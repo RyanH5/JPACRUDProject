@@ -19,7 +19,7 @@ public class AnimalController {
 	@RequestMapping(path="/")
 	public String index(Model model) {
 		List<Animal> Animals = dao.findAll();
-		model.addAttribute("Animals", Animals);
+		model.addAttribute("animals", Animals);
 	  return "WEB-INF/index.jsp";
 	}
 	
@@ -28,10 +28,10 @@ public class AnimalController {
 	}
 	
 	@RequestMapping(path="getAnimal.do")
-	public String showAnimal(@RequestParam("fid") Integer AnimalId, Model model) {
+	public String showAnimal(@RequestParam("aid") Integer AnimalId, Model model) {
 		Animal Animal = dao.findById(AnimalId);
-		model.addAttribute("Animal", Animal);
-		return "WEB-INF/Animal/show.jsp";
+		model.addAttribute("animal", Animal);
+		return "WEB-INF/animal/show.jsp";
 	}
 	
 
