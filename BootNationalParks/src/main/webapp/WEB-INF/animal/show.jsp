@@ -13,7 +13,7 @@
 		<p>${animal.description}</p>
 	</div>
 		<div class="btns-container">
-			<form action="/" method="GET">
+			<form action="goHome.do" method="GET">
 				<input type="submit" value="Return Home" />
 			</form>
 			<form action="getUpdatedAnimal.do" method="GET">

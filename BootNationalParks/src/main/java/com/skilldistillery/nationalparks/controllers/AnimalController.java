@@ -18,7 +18,7 @@ public class AnimalController {
 	@Autowired
 	private AnimalDAO dao;
 	
-	@RequestMapping(path="/")
+	@RequestMapping(path= {"/", "goHome.do"})
 	public String index(Model model) {
 		List<Animal> Animals = dao.findAll();
 		model.addAttribute("animals", Animals);
