@@ -21,7 +21,7 @@ DROP SCHEMA IF EXISTS `orig` ;
 -- -----------------------------------------------------
 -- Schema orig
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `orig` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `national_parkdb` DEFAULT CHARACTER SET utf8 ;
 USE `national_parkdb` ;
 
 -- -----------------------------------------------------
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `sighting_has_wild_flower` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-USE `orig` ;
+USE `national_parkdb` ;
 
 -- -----------------------------------------------------
 -- Table `animal`
@@ -169,7 +169,7 @@ COMMIT;
 -- Data for table `animal`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `orig`;
+USE `national_parkdb`;
 INSERT INTO `animal` (`id`, `name`, `description`, `image`) VALUES (1, 'Short Tailed Weasel', 'Small weasels also known as ermine.', 'https://www.nps.gov/common/uploads/grid_builder/yell/crop16_9/3895DD36-1DD8-B71B-0BAC5CE03E9838E5.jpg?width=465&quality=90&mode=crop');
 INSERT INTO `animal` (`id`, `name`, `description`, `image`) VALUES (2, 'Yellow-bellied Marmot', 'Rodents that hibernate for eight months and are seen climbing around rocks.', 'https://www.nps.gov/common/uploads/grid_builder/yell/crop16_9/36DAB1BF-1DD8-B71B-0BD6F96459B4A666.jpg?width=465&quality=90&mode=crop');
 INSERT INTO `animal` (`id`, `name`, `description`, `image`) VALUES (3, 'Red Fox', 'Smallest of the three canid species found in the park.', 'https://www.nps.gov/common/uploads/grid_builder/yell/crop16_9/387534AE-1DD8-B71B-0BBD9E0ECC020D35.jpg?width=465&quality=90&mode=crop');
