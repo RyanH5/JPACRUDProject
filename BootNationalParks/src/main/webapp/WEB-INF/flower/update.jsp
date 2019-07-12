@@ -18,8 +18,8 @@
 		<br> 
 		<label for="image">Image-url:</label> 
 		<input type="text" name="image" value="${flower.image}"/> 
-		<label for="blooming-period">Blooming Period:</label> 
-		<input type="text" name="blooming-period" value="${flower.bloomingPeriod}"/> 
+		<label for="bloomingPeriod">Blooming Period:</label> 
+		<input type="text" name="bloomingPeriod" value="${flower.bloomingPeriod}"/> 
 		<br> 
 		<input type="submit" value="Update Flower"/>
 	</form>
