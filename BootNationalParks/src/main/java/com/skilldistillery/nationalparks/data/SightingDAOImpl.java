@@ -24,8 +24,9 @@ public class SightingDAOImpl implements SightingDAO{
 
 	@Override
 	public List<Sighting> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "SELECT s FROM sighting s";
+		List<Sighting> sightings = em.createQuery(query, Sighting.class).getResultList();
+		return sightings;
 	}
 
 	@Override
