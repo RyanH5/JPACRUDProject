@@ -16,7 +16,7 @@ CREATE SCHEMA IF NOT EXISTS `national_parkdb` DEFAULT CHARACTER SET utf8 ;
 -- -----------------------------------------------------
 -- Schema orig
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `orig` ;
+DROP SCHEMA IF EXISTS `national_parkdb` ;
 
 -- -----------------------------------------------------
 -- Schema orig
@@ -137,6 +137,9 @@ INSERT INTO `sighting` (`id`, `date_seen`) VALUES (1, '2019-02-03');
 INSERT INTO `sighting` (`id`, `date_seen`) VALUES (2, '2018-05-10');
 INSERT INTO `sighting` (`id`, `date_seen`) VALUES (3, '2017-05-08');
 INSERT INTO `sighting` (`id`, `date_seen`) VALUES (4, '2014-09-07');
+INSERT INTO `sighting` (`id`, `date_seen`) VALUES (5, '2016-08-12');
+INSERT INTO `sighting` (`id`, `date_seen`) VALUES (6, '2003-12-12');
+INSERT INTO `sighting` (`id`, `date_seen`) VALUES (7, '2013-09-28');
 
 COMMIT;
 
@@ -166,6 +169,18 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `sighting_has_wild_flower`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `national_parkdb`;
+INSERT INTO `sighting_has_wild_flower` (`sighting_id`, `wild_flower_id`) VALUES (5, 3);
+INSERT INTO `sighting_has_wild_flower` (`sighting_id`, `wild_flower_id`) VALUES (6, 2);
+INSERT INTO `sighting_has_wild_flower` (`sighting_id`, `wild_flower_id`) VALUES (7, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `animal`
 -- -----------------------------------------------------
 START TRANSACTION;
@@ -180,6 +195,19 @@ INSERT INTO `animal` (`id`, `name`, `description`, `image`) VALUES (9, 'Lochness
 INSERT INTO `animal` (`id`, `name`, `description`, `image`) VALUES (11, 'giraffe', 'tall neck fighters', 'https://www.africa-wildlife-detective.com/images/giraffes-fighting-e.jpg');
 INSERT INTO `animal` (`id`, `name`, `description`, `image`) VALUES (12, 'Bobcat', 'One of the elusive cats of yellowstone', 'https://www.nps.gov/common/uploads/grid_builder/yell/crop16_9/41F19631-1DD8-B71B-0B33B9A26B0783AF.jpg?width=307&quality=90&mode=crop');
 INSERT INTO `animal` (`id`, `name`, `description`, `image`) VALUES (13, 'Black Bear', 'Commonly seen in Yellowstone', 'https://www.nps.gov/common/uploads/grid_builder/yell/crop16_9/419891EB-1DD8-B71B-0BCD6C888FD32498.jpg?width=307&quality=90&mode=crop');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `animal_has_sighting`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `national_parkdb`;
+INSERT INTO `animal_has_sighting` (`animal_id`, `sighting_id`) VALUES (1, 1);
+INSERT INTO `animal_has_sighting` (`animal_id`, `sighting_id`) VALUES (2, 3);
+INSERT INTO `animal_has_sighting` (`animal_id`, `sighting_id`) VALUES (3, 2);
+INSERT INTO `animal_has_sighting` (`animal_id`, `sighting_id`) VALUES (4, 4);
 
 COMMIT;
 
