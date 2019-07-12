@@ -32,10 +32,6 @@ public class AnimalController {
 	  return "index";
 	}
 	
-	public String showAnimal() {
-		return "Animal/index";
-	}
-	
 	@RequestMapping(path="getAnimal.do")
 	public String showAnimal(@RequestParam("aid") Integer AnimalId, Model model) {
 		Animal Animal = dao.findById(AnimalId);
