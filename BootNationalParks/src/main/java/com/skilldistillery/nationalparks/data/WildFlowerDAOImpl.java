@@ -22,13 +22,14 @@ public class WildFlowerDAOImpl implements WildFlowerDAO{
 
 	@Override
 	public List<WildFlower> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String jpql = "SELECT wf FROM WildFlower wf";
+		List<WildFlower> wildFlowers = em.createQuery(jpql, WildFlower.class).getResultList();
+		return wildFlowers;
 	}
 
 	@Override
 	public WildFlower addNewWildFlower(WildFlower wildFlower) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
