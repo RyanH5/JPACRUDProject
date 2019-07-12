@@ -45,7 +45,7 @@ public class WildFlowerDAOImpl implements WildFlowerDAO{
 
 	@Override
 	public void deleteWildFlower(int id) {
-		// TODO Auto-generated method stub
+		em.remove(em.find(WildFlower.class, id));
 		
 	}
 
