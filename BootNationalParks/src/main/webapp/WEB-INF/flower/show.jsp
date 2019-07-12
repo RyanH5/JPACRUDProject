@@ -17,9 +17,9 @@
 			<form action="goHome.do" method="GET">
 				<input type="submit" value="Return Home" />
 			</form>
-			<%-- <form action="getUpdatedAnimal.do" method="GET">
-				<input type="hidden" name="aid" value="${animal.id}" />
-				<input type="submit" value="Update This Animal" />
+			<form action="getUpdatedFlower.do" method="GET">
+				<input type="hidden" name="aid" value="${flower.id}" />
+				<input type="submit" value="Update This Flower" />
 			</form>
 			<form action="getDeletedAnimal.do" method="GET">
 				<input type="hidden" name="aid" value="${animal.id}" />

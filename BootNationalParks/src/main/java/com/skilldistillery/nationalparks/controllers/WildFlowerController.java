@@ -23,5 +23,11 @@ public class WildFlowerController {
 		model.addAttribute("flower", wf);
 		return "flower/show";
 	}
+	
+	@RequestMapping(path="getUpdatedFlower.do")
+	public String updateFlower(@RequestParam("wfid") Integer id, Model model) {
+		model.addAttribute("flower", dao.findById(id));
+		return "flower/update";
+	}
 
 }
