@@ -20,7 +20,7 @@ public class WildFlowerController {
 	@RequestMapping(path="getFlower.do")
 	public String showFlower(@RequestParam("wfid") Integer FlowerId, Model model, WildFlower wildFlower) {
 		WildFlower wf = dao.findById(FlowerId);
-		model.addAttribute("wildFlowers", wf);
+		model.addAttribute("flower", wf);
 		return "flower/show";
 	}
 

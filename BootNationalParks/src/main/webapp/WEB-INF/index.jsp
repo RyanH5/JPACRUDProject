@@ -24,7 +24,7 @@
 	  </ul>
 	  <ul>
 	  	<c:forEach var="wf" items="${wildFlowers}">
-	  		<li><a href="getAnimal.do?aid=${wf.id}">${wf.name}</a></li>
+	  		<li><a href="getFlower.do?wfid=${wf.id}">${wf.name}</a></li>
 	  	</c:forEach>
 	  </ul>
   
