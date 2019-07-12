@@ -39,4 +39,17 @@ public class Sighting {
 	public void setDateSeen(Date dateSeen) {
 		this.dateSeen = dateSeen;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Sighting [id=");
+		builder.append(id);
+		builder.append(", dateSeen=");
+		builder.append(dateSeen);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 }
