@@ -29,14 +29,18 @@ public class WildFlowerDAOImpl implements WildFlowerDAO{
 
 	@Override
 	public WildFlower addNewWildFlower(WildFlower wildFlower) {
-		
-		return null;
+		em.persist(wildFlower);
+		return wildFlower;
 	}
 
 	@Override
 	public WildFlower updateWildFlower(WildFlower wildFlower) {
-		// TODO Auto-generated method stub
-		return null;
+		WildFlower wf = em.find(WildFlower.class, wildFlower.getId());
+		wf.setName(wildFlower.getName());
+		wf.setLocation(wildFlower.getLocation());
+		wf.setImage(wildFlower.getImage());
+		em.persist(wf);
+		return wf;
 	}
 
 	@Override
