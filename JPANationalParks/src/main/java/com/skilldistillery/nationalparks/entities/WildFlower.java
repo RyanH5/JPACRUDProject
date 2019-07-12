@@ -3,6 +3,7 @@ package com.skilldistillery.nationalparks.entities;
 import javax.persistence.*;
 
 @Entity
+@Table(name="wild_flower")
 public class WildFlower {
 
 	@Id
@@ -12,6 +13,7 @@ public class WildFlower {
 	private String name;
 	private String image;
 	private String location;
+	
 	@Column(name="blooming_period")
 	private String bloomingPeriod;
 	
