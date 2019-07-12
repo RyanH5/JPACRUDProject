@@ -8,18 +8,27 @@
 <title>My Animals</title>
 </head>
 <body>
-<form action="getAnimal.do" method="GET">
-  Animal ID: <input type="text" name="aid" />
-  <input type="submit" value="Show Animal" />
-</form>
-  <hr>
-  <ul>
-  	<c:forEach var="a" items="${animals}">
-  		<li><a href="getAnimal.do?aid=${a.id}">${a.name}</a></li>
-  	</c:forEach>
-  </ul>
+	<form action="getAnimal.do" method="GET">
+  		Animal ID: <input type="text" name="aid" />
+  		<input type="submit" value="Show Animal" />
+	</form>
+	<form action="getFlower.do" method="GET">
+  		Wild Flower ID: <input type="text" name="wfid" />
+  		<input type="submit" value="Show Wild Flower" />
+	</form>
+	  <hr>
+	  <ul>
+	  	<c:forEach var="a" items="${animals}">
+	  		<li><a href="getAnimal.do?aid=${a.id}">${a.name}</a></li>
+	  	</c:forEach>
+	  </ul>
+	  <ul>
+	  	<c:forEach var="wf" items="${wildFlowers}">
+	  		<li><a href="getFlower.do?wfid=${wf.id}">${wf.name}</a></li>
+	  	</c:forEach>
+	  </ul>
   
-  <hr>
+  	<hr>
   
   <h2>What's That?  You found a new animal in Yellowstone?!?!</h2>
   <form action="getAnimalAdd.do" method="GET">

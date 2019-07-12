@@ -11,22 +11,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nationalparks.data.AnimalDAO;
+import com.skilldistillery.nationalparks.data.WildFlowerDAO;
 import com.skilldistillery.nationalparks.entities.Animal;
+import com.skilldistillery.nationalparks.entities.WildFlower;
 
 @Controller
 public class AnimalController {
 	@Autowired
 	private AnimalDAO dao;
+	@Autowired
+	private WildFlowerDAO dao2;
 	
 	@RequestMapping(path= {"/", "goHome.do"})
 	public String index(Model model) {
 		List<Animal> Animals = dao.findAll();
+		List<WildFlower> flowers = dao2.findAll();
+		model.addAttribute("wildFlowers", flowers);
 		model.addAttribute("animals", Animals);
+		System.out.println(model);
 	  return "index";
-	}
-	
-	public String showAnimal() {
-		return "Animal/index";
 	}
 	
 	@RequestMapping(path="getAnimal.do")

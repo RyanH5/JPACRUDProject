@@ -39,7 +39,11 @@ public class WildFlowerDAOImpl implements WildFlowerDAO{
 		wf.setName(wildFlower.getName());
 		wf.setLocation(wildFlower.getLocation());
 		wf.setImage(wildFlower.getImage());
+		wf.setBloomingPeriod(wildFlower.getBloomingPeriod()	);
 		em.persist(wf);
+		System.out.println("______________________________");
+		System.out.println(wf);
+		System.out.println("______________________________");
 		return wf;
 	}
 

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1>Ok, Steve Irwin. You tell me</h1>
+	<h1>UPDATE ANIMAL</h1>
 
 
 	<form action="displayUpdatedAnimal.do" modelAttribute="animal" method="POST">
