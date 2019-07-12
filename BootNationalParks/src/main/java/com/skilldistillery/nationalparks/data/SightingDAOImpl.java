@@ -37,14 +37,14 @@ public class SightingDAOImpl implements SightingDAO{
 
 	@Override
 	public Sighting updateSighting(Sighting sighting) {
-		// TODO Auto-generated method stub
-		return null;
+		Sighting nuSighting = em.find(Sighting.class, sighting.getId());
+		nuSighting.setDateSeen(sighting.getDateSeen());
+		return nuSighting;
 	}
 
 	@Override
 	public void deleteSighting(int id) {
-		// TODO Auto-generated method stub
-		
+		em.remove(em.find(Sighting.class, id));	
 	}
 
 }
