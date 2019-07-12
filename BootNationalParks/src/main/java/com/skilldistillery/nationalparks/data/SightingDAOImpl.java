@@ -31,8 +31,8 @@ public class SightingDAOImpl implements SightingDAO{
 
 	@Override
 	public Sighting addNewSighting(Sighting sighting) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(sighting);
+		return sighting;
 	}
 
 	@Override
