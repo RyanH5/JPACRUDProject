@@ -8,7 +8,9 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
     
-<class>com.skilldistillery.nationalparks.entities.Animal</class>
+	<class>com.skilldistillery.nationalparks.entities.Animal</class>
+	<class>com.skilldistillery.nationalparks.entities.Sighting</class>
+	<class>com.skilldistillery.nationalparks.entities.WildFlower</class>
 
 
     <properties>

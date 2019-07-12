@@ -3,28 +3,29 @@ package com.skilldistillery.nationalparks.entities;
 import javax.persistence.*;
 
 @Entity
-public class Animal {
+public class WildFlower {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String name;
-	
 	private String image;
-
-	private String description;
-
-
-	public Animal() {
+	private String location;
+	@Column(name="blooming_period")
+	private String bloomingPeriod;
+	
+	
+	public WildFlower() {
 		super();
 	}
 
-	public Animal(String name, String image, String description) {
+	public WildFlower(String name, String image, String location, String bloomingPeriod) {
 		super();
 		this.name = name;
 		this.image = image;
-		this.description = description;
+		this.location = location;
+		this.bloomingPeriod = bloomingPeriod;
 	}
 
 	public int getId() {
@@ -51,30 +52,37 @@ public class Animal {
 		this.image = image;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getBloomingPeriod() {
+		return bloomingPeriod;
+	}
+
+	public void setBloomingPeriod(String bloomingPeriod) {
+		this.bloomingPeriod = bloomingPeriod;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Animal [id=");
+		builder.append("WildFlower [id=");
 		builder.append(id);
 		builder.append(", name=");
 		builder.append(name);
 		builder.append(", image=");
 		builder.append(image);
-		builder.append(", description=");
-		builder.append(description);
+		builder.append(", location=");
+		builder.append(location);
+		builder.append(", bloomingPeriod=");
+		builder.append(bloomingPeriod);
 		builder.append("]");
 		return builder.toString();
 	}
-
 	
-
-
 }
