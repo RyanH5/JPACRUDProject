@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>My Animals</title>
+<title>Yellowstone Life</title>
 </head>
 <body>
 	<form action="getAnimal.do" method="GET">
