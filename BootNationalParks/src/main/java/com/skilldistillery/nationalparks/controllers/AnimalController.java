@@ -45,11 +45,9 @@ public class AnimalController {
 	}
 	
 	@RequestMapping(path = "newAnimal.do")
-	public String showNewAnimal(@RequestParam("name") String name,
-			@RequestParam("description") String description,
-			@RequestParam("image") String image, Model model)  {
-		model.addAttribute("animal", dao.addNewAnimal(new Animal(name, image, description)));
-		
+	public String showNewAnimal(Animal animal, Model model) {
+		Animal newAnimal = dao.addNewAnimal(animal);
+		model.addAttribute("animal", newAnimal);
 		return "animal/show";
 	}
 	
