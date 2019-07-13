@@ -31,6 +31,7 @@ public class WildFlowerController {
 		model.addAttribute("flower", dao.findById(id));
 		return "flower/update";
 	}
+	
 //	WHY WAS I UNABLE TO RETURN STRING FROM HERE LIKE W/ ANIMAL
 	@RequestMapping(path="displayUpdatedFlower.do", method = RequestMethod.POST)
 	public ModelAndView displayUpdatedFlower(WildFlower flower) {
@@ -39,6 +40,18 @@ public class WildFlowerController {
 		model.addObject("flower", updatedFlower);
 		model.setViewName("flower/show");
 		return model;
+	}
+	
+	@RequestMapping(path = "getWildFlowerAdd.do")
+	public String addNewWildFlower() {
+		return "flower/add";
+	}
+	
+	@RequestMapping(path = "newWildFlower.do") 
+	public String showNewWildFlower(WildFlower flower, Model model) {
+		WildFlower wf = dao.addNewWildFlower(flower);
+		model.addAttribute("flower", wf);
+		return "flower/show";
 	}
 
 }
