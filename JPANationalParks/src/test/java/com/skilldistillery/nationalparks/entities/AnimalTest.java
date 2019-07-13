@@ -35,6 +35,9 @@ class AnimalTest {
 		Animal daWeasel = em.find(Animal.class, 1);
 		assertEquals("Short Tailed Weasel", daWeasel.getName());
 		assertNotNull(daWeasel);
+		assertEquals("2019-02-03", daWeasel.getSightings().get(0).getDateSeen().toString());
 	}
+	
+	
 
 }
