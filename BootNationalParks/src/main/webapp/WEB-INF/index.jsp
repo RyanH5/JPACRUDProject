@@ -38,6 +38,10 @@
   <form action="getWildFlowerAdd.do" method="GET">
   	<input type="submit" value="Add new wild flower">
   </form>
+  <h2>Click Below to add a sighting of a Yellowstone animal or wild flower</h2>
+  <form action="getSsightingAdd.do" method="GET">
+  	<input type="submit" value="Add new sighting">
+  </form>
 
 </body>
 </html>
