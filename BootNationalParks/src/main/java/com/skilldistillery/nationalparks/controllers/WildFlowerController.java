@@ -58,8 +58,6 @@ public class WildFlowerController {
 	
 	@RequestMapping(path="getDeletedFlower.do")
 	public String deleteWildFlower(@RequestParam("wfid") Integer id, Model model) {
-		System.out.println("===================================================================================");
-		System.out.println(model);
 		dao.deleteWildFlower(id);
 		List<WildFlower> wildFlowers = dao.findAll();
 		List<Animal> animals = dao2.findAll();

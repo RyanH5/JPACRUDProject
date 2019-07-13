@@ -71,7 +71,9 @@ public class AnimalController {
 	public String deleteAnimal(@RequestParam("aid") Integer id, Model model) {
 		dao.deleteAnimal(id);
 		List<Animal> animals = dao.findAll();
+		List<WildFlower> flowers = dao2.findAll();
 		model.addAttribute("animals", animals);
+		model.addAttribute("wildFlowers", flowers);
 		return "index";
 	}
 	
