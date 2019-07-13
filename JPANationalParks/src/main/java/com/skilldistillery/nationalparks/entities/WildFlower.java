@@ -46,6 +46,14 @@ public class WildFlower {
 		}
 	}
 	
+	public List<Sighting> getSightings() {
+		return sightings;
+	}
+
+	public void setSightings(List<Sighting> sightings) {
+		this.sightings = sightings;
+	}
+
 	public void removeSighting(Sighting sighting) {
 		if (sightings != null && sightings.contains(sighting)) {
 			sightings.remove(sighting);
