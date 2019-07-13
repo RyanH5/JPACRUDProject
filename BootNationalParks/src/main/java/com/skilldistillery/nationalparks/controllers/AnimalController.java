@@ -45,11 +45,9 @@ public class AnimalController {
 	}
 	
 	@RequestMapping(path = "newAnimal.do")
-	public String showNewAnimal(@RequestParam("name") String name,
-			@RequestParam("description") String description,
-			@RequestParam("image") String image, Model model)  {
-		model.addAttribute("animal", dao.addNewAnimal(new Animal(name, image, description)));
-		
+	public String showNewAnimal(Animal animal, Model model) {
+		Animal newAnimal = dao.addNewAnimal(animal);
+		model.addAttribute("animal", newAnimal);
 		return "animal/show";
 	}
 	
@@ -73,7 +71,9 @@ public class AnimalController {
 	public String deleteAnimal(@RequestParam("aid") Integer id, Model model) {
 		dao.deleteAnimal(id);
 		List<Animal> animals = dao.findAll();
+		List<WildFlower> flowers = dao2.findAll();
 		model.addAttribute("animals", animals);
+		model.addAttribute("wildFlowers", flowers);
 		return "index";
 	}
 	

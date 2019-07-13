@@ -21,10 +21,10 @@
 				<input type="hidden" name="wfid" value="${flower.id}" />
 				<input type="submit" value="Update This Flower" />
 			</form>
-<%-- 			<form action="getDeletedAnimal.do" method="GET">
-				<input type="hidden" name="aid" value="${animal.id}" />
-				<input type="submit" value="Delete Animal" />
-			</form>  --%>
+ 			<form action="getDeletedFlower.do" method="GET">
+				<input type="hidden" name="wfid" value="${flower.id}" />
+				<input type="submit" value="Delete Flower" />
+			</form>
 		</div>
 
 </body>

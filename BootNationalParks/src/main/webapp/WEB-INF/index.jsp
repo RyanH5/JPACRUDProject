@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>My Animals</title>
+<title>Yellowstone Life</title>
 </head>
 <body>
 	<form action="getAnimal.do" method="GET">
@@ -30,9 +30,13 @@
   
   	<hr>
   
-  <h2>What's That?  You found a new animal in Yellowstone?!?!</h2>
+  <h2>Click Below to add a new animal</h2>
   <form action="getAnimalAdd.do" method="GET">
   	<input type="submit" value="Add new animal">
+  </form>
+  <h2>Click Below to add a new wild flower</h2>
+  <form action="getWildFlowerAdd.do" method="GET">
+  	<input type="submit" value="Add new wild flower">
   </form>
 
 </body>
