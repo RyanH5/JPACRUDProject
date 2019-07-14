@@ -11,9 +11,17 @@
 	<c:choose>
 		<c:when test="${! empty sighting }">
 			<h2>${sighting.dateSeen}</h2>
-			<h3>${flower.name }</h3>
-			<h3>${animal.name}</h3>
-		
+			<c:if test="${ not empty sighting.animals}">
+				<h5>${animal.name}</h5>
+				<img src="${animal.image }">
+				<p>${animal.description}</p>
+			</c:if>
+ 			<c:if test="${not empty sighting.wildFlowers}">
+				<h3>${flower.name}</h3>
+				<img src="${flower.image}" />
+				<h3>${flower.location }</h3>
+				<h4>${flower.bloomingPeriod }</h4>
+			</c:if>	
 		</c:when>
 		<c:otherwise>
 			<h2>No sightings so far</h2>

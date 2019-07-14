@@ -23,10 +23,8 @@ public class SightingController {
 		model.addAttribute("sighting", appearance);
 		if (appearance.getWildFlowers().size() > 0) {
 		model.addAttribute("flower", appearance.getWildFlowers().get(0));
-		System.out.println(appearance.getWildFlowers().get(0));
 	}	else if (appearance.getAnimals().size() > 0) {
 		model.addAttribute("animal", appearance.getAnimals().get(0));
-		System.out.println(appearance.getAnimals().get(0));
 	} else {
 			model.addAttribute("errorMsg", "Sorry, no sightings that day");
 		}
