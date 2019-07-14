@@ -1,15 +1,17 @@
 package com.skilldistillery.nationalparks.controllers;
 
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nationalparks.data.SightingDAO;
-import com.skilldistillery.nationalparks.entities.Animal;
-import com.skilldistillery.nationalparks.entities.Sighting;
-import com.skilldistillery.nationalparks.entities.WildFlower;
+import com.skilldistillery.nationalparks.entities.*;
 
 @Controller
 public class SightingController {
@@ -34,6 +36,26 @@ public class SightingController {
 	@RequestMapping(path="getSightingAdd.do")
 	public String addNewSighting() {
 		return "sighting/add";
+	}
+	
+	@RequestMapping(path="getUpdatedSighting.do")
+	public String updateSighting(@RequestParam("sid") Integer sightingId, Model model, Sighting sighting) {
+		
+		model.addAttribute("sighting", dao.findById(sightingId));
+		
+		return "sighting/update";
+	}
+	
+//	@PostMapping("/date")
+	@RequestMapping(path="displayUpdatedSighting.do", method = RequestMethod.POST)
+	public ModelAndView displayUpdatedSighting(Sighting sighting) {
+		System.out.println(sighting);
+		Sighting updatedSighting = dao.updateSighting(sighting);
+		ModelAndView model = new ModelAndView();
+		model.addObject("sighting", updatedSighting);
+		model.setViewName("sighting/show");
+		return model;
+		
 	}
 	
 }

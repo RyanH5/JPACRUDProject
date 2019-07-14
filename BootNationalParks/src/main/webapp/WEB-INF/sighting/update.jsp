@@ -11,7 +11,7 @@
 	<form action="displayUpdatedSighting.do" modelAttribute="sighting" method="POST">
 		<input type="hidden" name="sid" value="${sighting.id}" /> 
 		<label for="name">Name:</label> 
-		<input type="text" name="dateSeen" value="${sighting.dateSeen}"> 
+		<input type="Date" name="dateSeen" value="${sighting.dateSeen}"> 
 		<br> 
 		<!--  STRETCH GOAL alter name, image, description of animal/flower from here -->
 		<input type="submit" value="Update Sighting"/>
