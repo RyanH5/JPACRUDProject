@@ -16,7 +16,10 @@
 				<img src="${animal.image }">
 				<p>${animal.description}</p>
 			</c:if>
+			<!--  THIS WAS TRICKY Sighting must have a field of the thing you empty check, 
+			AKA check for wildflowers NOT flower-->
  			<c:if test="${not empty sighting.wildFlowers}">
+ 			<!--  Then what you display is the data on THIS sighting instance SO flower-->
 				<h3>${flower.name}</h3>
 				<img src="${flower.image}" />
 				<h3>${flower.location }</h3>
@@ -25,9 +28,22 @@
 		</c:when>
 		<c:otherwise>
 			<h2>No sightings so far</h2>
-		</c:otherwise>
-	
+		</c:otherwise>	
 	</c:choose>
+	
+	<div class="btns-container">
+			<form action="goHome.do" method="GET">
+				<input type="submit" value="Return Home" />
+			</form>
+			<form action="getUpdatedSighting.do" method="GET">
+				<input type="hidden" name="sid" value="${sighting.id}" />
+				<input type="submit" value="Update This Sighting" />
+			</form>
+			<form action="getDeletedSighting.do" method="GET">
+				<input type="hidden" name="sid" value="${sighting.id}" />
+				<input type="submit" value="Delete Sighting" />
+			</form>
+		</div>
 	
 
 </body>

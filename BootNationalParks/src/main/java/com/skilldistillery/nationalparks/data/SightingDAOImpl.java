@@ -24,6 +24,7 @@ public class SightingDAOImpl implements SightingDAO{
 
 	@Override
 	public List<Sighting> findAll() {
+//		"CAPITAL S" Sighting because jpql deals in Objects, SQL deals in column_names
 		String query = "SELECT s from Sighting s";
 		List<Sighting> sightings = em.createQuery(query, Sighting.class).getResultList();
 		System.out.println(sightings);
