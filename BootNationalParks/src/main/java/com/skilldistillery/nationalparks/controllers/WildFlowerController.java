@@ -23,8 +23,6 @@ public class WildFlowerController {
 	public String showFlower(@RequestParam("wfid") Integer FlowerId, Model model, WildFlower wildFlower) {
 		WildFlower wf = dao.findById(FlowerId);
 		model.addAttribute("flower", wf);
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-		System.out.println(wf);
 		return "flower/show";
 	}
 	

@@ -96,7 +96,7 @@ public class Sighting {
 		this.id = id;
 	}
 
-	public Date getDateSeen() {
+	public Date getDateSeen() {		
 		return dateSeen;
 	}
 

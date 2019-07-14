@@ -46,11 +46,17 @@ public class SightingController {
 		return "sighting/update";
 	}
 	
-//	@PostMapping("/date")
 	@RequestMapping(path="displayUpdatedSighting.do", method = RequestMethod.POST)
-	public ModelAndView displayUpdatedSighting(Sighting sighting) {
-		System.out.println(sighting);
-		Sighting updatedSighting = dao.updateSighting(sighting);
+	public ModelAndView displayUpdatedSighting(
+			@RequestParam("sid") Integer id,
+			@RequestParam("dateSeen") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date 
+	) {
+
+		Sighting oldSighting = dao.findById(id);
+		oldSighting.setDateSeen(date);
+		System.out.println("------------------------------------------------------------------");
+		Sighting updatedSighting = dao.updateSighting(oldSighting);
+		
 		ModelAndView model = new ModelAndView();
 		model.addObject("sighting", updatedSighting);
 		model.setViewName("sighting/show");
