@@ -9,15 +9,17 @@
 </head>
 <body>
 	<c:choose>
-		<c:when test="${! empty sightings }">
-			<h2>${sightings.dateSeen}</h2>
+		<c:when test="${! empty sighting }">
+			<h2>${sighting.dateSeen}</h2>
+			<h3>${flower.name }</h3>
+			<h3>${animal.name}</h3>
 		
 		</c:when>
+		<c:otherwise>
+			<h2>No sightings so far</h2>
+		</c:otherwise>
 	
 	</c:choose>
-	<c:otherwise>
-		<h2>No sightings so far</h2>
-	</c:otherwise>
 	
 
 </body>
