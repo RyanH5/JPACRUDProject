@@ -24,7 +24,9 @@ public class SightingDAOImpl implements SightingDAO{
 
 	@Override
 	public List<Sighting> findAll() {
-		String query = "SELECT s FROM sighting s";
+//		String query = "SELECT s FROM sighting s JOIN animal_has_sighting ahs WHERE s.id = ahs.sighting_id";
+//		String query = "SELECT ahs from animal_has_sighting ahs JOIN sighting s on s.id = ahs.sighting_id";
+		String query = "SELECT s FROM sighting s JOIN FETCH f.animals a WHERE a.sighting.id = s.id";
 		List<Sighting> sightings = em.createQuery(query, Sighting.class).getResultList();
 		return sightings;
 	}

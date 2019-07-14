@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nationalparks.data.AnimalDAO;
+import com.skilldistillery.nationalparks.data.SightingDAO;
 import com.skilldistillery.nationalparks.data.WildFlowerDAO;
 import com.skilldistillery.nationalparks.entities.Animal;
+import com.skilldistillery.nationalparks.entities.Sighting;
 import com.skilldistillery.nationalparks.entities.WildFlower;
 
 @Controller
@@ -21,13 +23,17 @@ public class AnimalController {
 	private AnimalDAO dao;
 	@Autowired
 	private WildFlowerDAO dao2;
+	@Autowired
+	private SightingDAO dao3;
 	
 	@RequestMapping(path= {"/", "goHome.do"})
 	public String index(Model model) {
 		List<Animal> Animals = dao.findAll();
 		List<WildFlower> flowers = dao2.findAll();
+		List<Sighting> sightings = dao3.findAll();
 		model.addAttribute("wildFlowers", flowers);
 		model.addAttribute("animals", Animals);
+		model.addAttribute("sightings", sightings);
 		System.out.println(model);
 	  return "index";
 	}
@@ -72,8 +78,10 @@ public class AnimalController {
 		dao.deleteAnimal(id);
 		List<Animal> animals = dao.findAll();
 		List<WildFlower> flowers = dao2.findAll();
+		List<Sighting> sightings = dao3.findAll();
 		model.addAttribute("animals", animals);
 		model.addAttribute("wildFlowers", flowers);
+		model.addAttribute("sightings", sightings);
 		return "index";
 	}
 	

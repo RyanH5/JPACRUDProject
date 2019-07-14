@@ -16,12 +16,15 @@ public class WildFlowerController {
 	
 	@Autowired
 	private WildFlowerDAO dao;
-	@Autowired AnimalDAO dao2;
+	@Autowired 
+	private AnimalDAO dao2;
 	
 	@RequestMapping(path="getFlower.do")
 	public String showFlower(@RequestParam("wfid") Integer FlowerId, Model model, WildFlower wildFlower) {
 		WildFlower wf = dao.findById(FlowerId);
 		model.addAttribute("flower", wf);
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+		System.out.println(wf);
 		return "flower/show";
 	}
 	

@@ -39,5 +39,10 @@ class SightingTest {
 		System.out.println(s1);
 		assertEquals("2019-02-03", s1.getDateSeen().toString());
 	}
+	
+	@Test 
+	void test_sighting_findAll() {
+		
+	}
 
 }
