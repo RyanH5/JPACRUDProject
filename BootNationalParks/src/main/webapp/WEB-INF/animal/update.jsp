@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Update Animal</title>
 </head>
 <body>
 
@@ -23,8 +23,7 @@
 		<input type="text"
 			name="image" value="${animal.image}"/> 
 			<br> 
-			<input
-			type="submit" value="Update Animal"/>
+			<input type="submit" value="Update Animal"/>
 	</form>
 
 	<hr>

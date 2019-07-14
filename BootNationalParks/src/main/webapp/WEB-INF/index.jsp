@@ -27,6 +27,11 @@
 	  		<li><a href="getFlower.do?wfid=${wf.id}">${wf.name}</a></li>
 	  	</c:forEach>
 	  </ul>
+	  <ul>
+	  	<c:forEach var="s" items="${sightings}">
+	  		<li><a href="getSighting.do?sid=${s.id}">${s.dateSeen}</a></li>
+	  	</c:forEach>
+	  </ul>
   
   	<hr>
   
@@ -37,6 +42,10 @@
   <h2>Click Below to add a new wild flower</h2>
   <form action="getWildFlowerAdd.do" method="GET">
   	<input type="submit" value="Add new wild flower">
+  </form>
+  <h2>Click Below to add a sighting of a Yellowstone animal or wild flower</h2>
+  <form action="getSightingAdd.do" method="GET">
+  	<input type="submit" value="Add new sighting">
   </form>
 
 </body>

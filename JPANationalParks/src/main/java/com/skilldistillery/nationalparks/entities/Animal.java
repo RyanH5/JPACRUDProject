@@ -1,5 +1,7 @@
 package com.skilldistillery.nationalparks.entities;
 
+import java.util.*;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,9 @@ public class Animal {
 	private String description;
 
 
+	@ManyToMany(mappedBy="animals")
+	private List<Sighting> sightings;
+	
 	public Animal() {
 		super();
 	}
@@ -29,6 +34,32 @@ public class Animal {
 
 	public int getId() {
 		return id;
+	}
+
+	public void addSighting(Sighting sighting) {
+		if (sightings == null) {
+			sightings = new ArrayList<>();
+		}
+		
+		if (!sightings.contains(sighting)) {
+			sightings.add(sighting);
+			sighting.addAnimal(this);
+		}
+	}
+	
+	public void removeSighting(Sighting sighting) {
+		if (sightings != null && sightings.contains(sighting)) {
+			sightings.remove(sighting);
+			sighting.removeAnimal(this);
+		}
+	}
+	
+	public List<Sighting> getSightings() {
+		return sightings;
+	}
+
+	public void setSightings(List<Sighting> sightings) {
+		this.sightings = sightings;
 	}
 
 	public void setId(int id) {

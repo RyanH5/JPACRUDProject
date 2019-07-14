@@ -28,7 +28,6 @@ class WildFlowerTest {
 		em.close();
 	}
 
-//	NO ID 1 DO NOT TEST IT
 	@Test
 	void test_wildflower_mappings() {
 		WildFlower wf = em.find(WildFlower.class, 2);
@@ -36,6 +35,7 @@ class WildFlowerTest {
 		assertEquals("Marsh marigold", wf.getName());
 		assertEquals("Wet meadows, parkwide & Beartooth Mountains", wf.getLocation());
 		assertNotNull(wf);
+		assertEquals("2003-12-12", wf.getSightings().get(0).getDateSeen().toString());
 	}
 
 }

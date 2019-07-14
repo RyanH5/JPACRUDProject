@@ -1,6 +1,6 @@
 package com.skilldistillery.nationalparks.entities;
 
-import java.util.Date;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -14,6 +14,18 @@ public class Sighting {
 	@Column(name="date_seen")
 	@Temporal(TemporalType.DATE)
 	private Date dateSeen;
+	
+	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
+	@JoinTable(name="animal_has_sighting",
+	joinColumns=@JoinColumn(name="sighting_id"),
+	inverseJoinColumns=@JoinColumn(name="animal_id"))
+	private List<Animal> animals;
+	
+	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
+	@JoinTable(name="sighting_has_wild_flower",
+	joinColumns=@JoinColumn(name="sighting_id"),
+	inverseJoinColumns=@JoinColumn(name="wild_flower_id"))
+	private List<WildFlower> wildFlowers;
 
 	public Sighting(Date dateSeen) {
 		super();
@@ -22,6 +34,58 @@ public class Sighting {
 
 	public Sighting() {
 		super();
+	}
+	
+	public void addAnimal(Animal animal) {
+		if (animals == null) {
+			animals = new ArrayList<>();
+		}
+		
+		if (!animals.contains(animal)) {
+			animals.add(animal);
+			animal.addSighting(this);
+		}
+	}
+	
+	public void removeAnimal(Animal animal) {
+		if (animals != null && animals.contains(animal)) {
+			animals.remove(animal);
+			animal.removeSighting(this);
+		}
+	}
+	
+	public void addWildFlower(WildFlower flower) {
+		if (wildFlowers == null) {
+			wildFlowers = new ArrayList<>();
+		}
+		
+		if (!wildFlowers.contains(flower)) {
+			wildFlowers.add(flower);
+			flower.addSighting(this);
+		}
+	}
+	
+	public void removeWildFlower(WildFlower flower) {
+		if (wildFlowers != null && wildFlowers.contains(flower)) {
+			wildFlowers.remove(flower);
+			flower.removeSighting(this);
+		}
+	}
+
+	public List<Animal> getAnimals() {
+		return animals;
+	}
+
+	public void setAnimals(List<Animal> animals) {
+		this.animals = animals;
+	}
+
+	public List<WildFlower> getWildFlowers() {
+		return wildFlowers;
+	}
+
+	public void setWildFlowers(List<WildFlower> wildFlowers) {
+		this.wildFlowers = wildFlowers;
 	}
 
 	public int getId() {
@@ -32,7 +96,7 @@ public class Sighting {
 		this.id = id;
 	}
 
-	public Date getDateSeen() {
+	public Date getDateSeen() {		
 		return dateSeen;
 	}
 

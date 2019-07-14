@@ -38,9 +38,9 @@ public class AnimalDAOImpl implements AnimalDAO{
 	@Override
 	public Animal updateAnimal(Animal a) {
 		Animal animal = em.find(Animal.class, a.getId());
-		animal.setName(animal.getName());
-		animal.setDescription(animal.getDescription());
-		animal.setImage(animal.getImage());
+		animal.setName(a.getName());
+		animal.setDescription(a.getDescription());
+		animal.setImage(a.getImage());
 		em.persist(animal);
 		return animal;
 	}

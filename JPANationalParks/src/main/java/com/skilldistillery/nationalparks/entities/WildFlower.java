@@ -1,5 +1,7 @@
 package com.skilldistillery.nationalparks.entities;
 
+import java.util.*;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,9 @@ public class WildFlower {
 	@Column(name="blooming_period")
 	private String bloomingPeriod;
 	
+	@ManyToMany(mappedBy="wildFlowers")
+	private List<Sighting> sightings; 
+	
 	
 	public WildFlower() {
 		super();
@@ -28,6 +33,32 @@ public class WildFlower {
 		this.image = image;
 		this.location = location;
 		this.bloomingPeriod = bloomingPeriod;
+	}
+	
+	public void addSighting(Sighting sighting) {
+		if (sightings == null) {
+			sightings = new ArrayList<>();
+		}
+		
+		if (!sightings.contains(sighting)) {
+			sightings.add(sighting);
+			sighting.addWildFlower(this);
+		}
+	}
+	
+	public List<Sighting> getSightings() {
+		return sightings;
+	}
+
+	public void setSightings(List<Sighting> sightings) {
+		this.sightings = sightings;
+	}
+
+	public void removeSighting(Sighting sighting) {
+		if (sightings != null && sightings.contains(sighting)) {
+			sightings.remove(sighting);
+			sighting.removeWildFlower(this);
+		}
 	}
 
 	public int getId() {
