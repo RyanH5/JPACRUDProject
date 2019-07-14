@@ -65,12 +65,12 @@ public class AnimalController {
 	}
 
 	@RequestMapping(path = "displayUpdatedAnimal.do", method = RequestMethod.POST)
-	public String displayUpdatedAnimal(Animal a) {
+	public ModelAndView displayUpdatedAnimal(Animal a) {
 		Animal updated = dao.updateAnimal(a);
 		ModelAndView model = new ModelAndView();
 		model.addObject("animal", updated);
-		
-		return "animal/show";
+		model.setViewName("animal/show");
+		return model;
 	}
 	
 	@RequestMapping(path="getDeletedAnimal.do")
