@@ -31,6 +31,11 @@ public class Sighting {
 		super();
 		this.dateSeen = dateSeen;
 	}
+	public Sighting(Date dateSeen, int id) {
+		super();
+		this.dateSeen = dateSeen;
+		this.id = id;
+	}
 
 	public Sighting() {
 		super();

@@ -47,13 +47,26 @@ public class SightingController {
 		return model;
 	}
 	
-//	@RequestMapping(path="newSighting.do")
-//	public ModelAndView displayUpdatedSighting(@RequestParam("sid") Integer id, 
-//			@RequestParam("sighting") String sighting, Date dateSeen, ModelAndView model) {
-//		
-//		model.addObject())
-//		return model;
-//	}
+	@RequestMapping(path="newSighting.do")
+	public ModelAndView displayUpdatedSighting(@RequestParam("sid") Integer id,
+			@RequestParam("sighting") String s,
+			@DateTimeFormat(pattern = "yyyy-MM-dd") Date dateSeen, ModelAndView model ) {
+		System.out.println("DATESEEN" + dateSeen);
+		System.out.println(id);
+		System.out.println(s);
+		if (s.equals("Animal")) {
+			model.addObject("animal", animalDAO.findById(id));
+		}	else {
+			model.addObject("flower", flowerDAO.findById(id));
+		}
+		Sighting sighting = new Sighting(dateSeen);
+		model.addObject(sighting);
+		dao.addNewSighting(sighting);
+		System.out.println("-------------------------------------");
+		System.out.println(model);
+		model.setViewName("sighting/show");
+		return model;
+	}
 	
 	@RequestMapping(path="getUpdatedSighting.do")
 	public String updateSighting(@RequestParam("sid") Integer sightingId, Model model, Sighting sighting) {

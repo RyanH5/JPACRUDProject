@@ -11,10 +11,22 @@
 	<c:choose>
 		<c:when test="${! empty sighting }">
 			<h2>${sighting.dateSeen}</h2>
+			
 			<c:if test="${ not empty sighting.animals}">
 				<h5>${animal.name}</h5>
 				<img src="${animal.image }">
 				<p>${animal.description}</p>
+			</c:if>
+			<c:if test="${ not empty animal}">
+				<h5>${animal.name}</h5>
+				<img src="${animal.image }">
+				<p>${animal.description}</p>
+			</c:if>
+			<c:if test="${ not empty flower}">
+				<h3>${flower.name}</h3>
+				<img src="${flower.image}" />
+				<h3>${flower.location }</h3>
+				<h4>${flower.bloomingPeriod }</h4>
 			</c:if>
 			<!--  THIS WAS TRICKY Sighting must have a field of the thing you empty check, 
 			AKA check for wildflowers NOT flower-->

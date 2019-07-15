@@ -43,8 +43,6 @@ public class SightingDAOImpl implements SightingDAO{
 	@Override
 	public Sighting updateSighting(Sighting sighting) {
 		Sighting nuSighting = em.find(Sighting.class, sighting.getId());
-//		SimpleDateFormat formatter = new SimpleDateFormat("dd-mm-yyyy", Locale.ENGLISH);
-//		Date date = formatter.parse(sighting.getDateSeen());
 		nuSighting.setDateSeen(sighting.getDateSeen());
 		em.persist(nuSighting);
 		
