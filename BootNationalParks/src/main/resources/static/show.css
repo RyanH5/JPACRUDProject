@@ -16,6 +16,28 @@ header {
 }
 
 .img {
-	height: 200px;
     border: 10px solid;
+}
+
+.btns-container {
+	width: fit-content;
+	margin:auto;
+	display: flex;
+}
+
+.btn {
+	color: #eaaf0f;
+	background: #473328;
+	padding: 8px;
+	border-radius: 5px;
+	border: 1.5px solid #eaaf0f;
+	margin: 10px;
+	font-size: 1.5rem;
+	
+}
+
+.btn:hover {
+	color: #473328;
+	background: #eaaf0f;
+	border: 1.5px solid #473328;
 }

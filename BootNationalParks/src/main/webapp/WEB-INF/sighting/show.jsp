@@ -15,12 +15,12 @@
 			
 			<c:if test="${ not empty sighting.animals}">
 				<h5>${animal.name}</h5>
-				<img src="${animal.image }">
+				<img src="${animal.image }" height="200px">
 				<p>${animal.description}</p>
 			</c:if>
 			<c:if test="${ not empty animal}">
 				<h5>${animal.name}</h5>
-				<img src="${animal.image }">
+				<img src="${animal.image }" height="200px">
 				<p>${animal.description}</p>
 			</c:if>
 			<c:if test="${ not empty flower}">
@@ -34,7 +34,7 @@
  			<c:if test="${not empty sighting.wildFlowers}">
  			<!--  Then what you display is the data on THIS sighting instance SO flower-->
 				<h3>${flower.name}</h3>
-				<img src="${flower.image}" />
+				<img src="${flower.image}" height="200px"/>
 				<h3>${flower.location }</h3>
 				<h4>${flower.bloomingPeriod }</h4>
 			</c:if>	
@@ -46,15 +46,15 @@
 	
 	<div class="btns-container">
 			<form action="goHome.do" method="GET">
-				<input type="submit" value="Return Home" />
+				<input type="submit" value="Return Home" class="btn"/>
 			</form>
 			<form action="getUpdatedSighting.do" method="GET">
 				<input type="hidden" name="sid" value="${sighting.id}" />
-				<input type="submit" value="Update This Sighting" />
+				<input type="submit" value="Update This Sighting" class="btn"/>
 			</form>
 			<form action="deleteSighting.do" method="GET">
 				<input type="hidden" name="sid" value="${sighting.id}" />
-				<input type="submit" value="Delete Sighting" />
+				<input type="submit" value="Delete Sighting" class="btn"/>
 			</form>
 		</div>
 	

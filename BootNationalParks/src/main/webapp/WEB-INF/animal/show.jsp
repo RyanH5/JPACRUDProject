@@ -15,15 +15,15 @@
 	</div>
 		<div class="btns-container">
 			<form action="goHome.do" method="GET">
-				<input type="submit" value="Return Home" />
+				<input type="submit" value="Return Home" class="btn"/>
 			</form>
 			<form action="getUpdatedAnimal.do" method="GET">
 				<input type="hidden" name="aid" value="${animal.id}" />
-				<input type="submit" value="Update This Animal" />
+				<input type="submit" value="Update This Animal" class="btn"/>
 			</form>
 			<form action="getDeletedAnimal.do" method="GET">
 				<input type="hidden" name="aid" value="${animal.id}" />
-				<input type="submit" value="Delete Animal" />
+				<input type="submit" value="Delete Animal" class="btn"/>
 			</form>
 		</div>
 

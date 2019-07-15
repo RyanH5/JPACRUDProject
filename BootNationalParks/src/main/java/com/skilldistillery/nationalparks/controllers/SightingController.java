@@ -52,8 +52,6 @@ public class SightingController {
 			@RequestParam("sighting") String s,
 			@DateTimeFormat(pattern = "yyyy-MM-dd") Date dateSeen, ModelAndView model ) {
 		System.out.println("DATESEEN" + dateSeen);
-		System.out.println(id);
-		System.out.println(s);
 		if (s.equals("Animal")) {
 			model.addObject("animal", animalDAO.findById(id));
 		}	else {
