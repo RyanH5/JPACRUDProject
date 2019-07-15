@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Update Flower</title>
+<link rel="stylesheet" type="text/css" href="update.css">
 </head>
 <body>
-	<h1>UPDATE FLOWER</h1>
+	<header>
+		<h1>UPDATE FLOWER</h1>
+	</header>
 	<form action="displayUpdatedFlower.do" method="POST">
 		<input type="hidden" name="id" value="${flower.id}" /> 
 		<label for="name">Name:</label> 

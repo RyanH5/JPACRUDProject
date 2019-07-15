@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing:"border-box";
+	background-image: url('https://www.sierraclub.org/sites/www.sierraclub.org/files/styles/flexslider_full/public/sierra/articles/big/SIERRA%20Forests%20WB.jpeg?itok=Qk9Pndtv');
+	background-repeat: no-repeat;
+    background-size: cover;
+    color: #eaaf0f;
+    font-family: sans-serif;
+}
+
+header {
+	    background: #473328;
+	    padding: 10px;
+}
+
+h1 {
+	    text-align: center;
+}
+
+.btn {
+	color: #eaaf0f;
+	background: #473328;
+	padding: 8px;
+	border-radius: 5px;
+	border: 1.5px solid #eaaf0f;
+	margin: 10px;
+	font-size: 2rem;
+	
+}
+
+.btn:hover {
+	color: #473328;
+	background: #eaaf0f;
+	border: 1.5px solid #473328;
+}

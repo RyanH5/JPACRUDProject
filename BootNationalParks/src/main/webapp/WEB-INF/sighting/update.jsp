@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="update.css">
 </head>
 <body>
-	<h1>UPDATE Sighting</h1>
+	<header>
+		<h1>UPDATE Sighting</h1>
+	</header>
 	<form action="displayUpdatedSighting.do" modelAttribute="sighting" method="POST">
 		<input type="hidden" name="sid" value="${sighting.id}" /> 
 		<label for="name">Name:</label> 
