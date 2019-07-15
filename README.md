@@ -1,5 +1,7 @@
 ## JPACRUDProject - National Park Animals
 
+<img src="NatlPark Tables.png" />
+
 This is a basic CRUD project, giving a user the ability to View, Add, Update, and Remove animals off a list.
 
 ### File Structure
