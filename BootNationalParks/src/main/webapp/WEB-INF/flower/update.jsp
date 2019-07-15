@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>UPDATE FLOWER</h1>
-	<form action="displayUpdatedFlower.do" modelAttribute="flower" method="POST">
+	<form action="displayUpdatedFlower.do" method="POST">
 		<input type="hidden" name="id" value="${flower.id}" /> 
 		<label for="name">Name:</label> 
 		<input type="text" name="name" value="${flower.name}"> 

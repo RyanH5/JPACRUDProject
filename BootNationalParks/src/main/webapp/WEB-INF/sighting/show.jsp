@@ -39,7 +39,7 @@
 				<input type="hidden" name="sid" value="${sighting.id}" />
 				<input type="submit" value="Update This Sighting" />
 			</form>
-			<form action="getDeletedSighting.do" method="GET">
+			<form action="deleteSighting.do" method="GET">
 				<input type="hidden" name="sid" value="${sighting.id}" />
 				<input type="submit" value="Delete Sighting" />
 			</form>
