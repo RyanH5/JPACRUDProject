@@ -5,10 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Update Animal</title>
+<link rel="stylesheet" type="text/css" href="update.css">
 </head>
 <body>
 
-	<h1>UPDATE ANIMAL</h1>
+	<header>
+		<h1>UPDATE ANIMAL</h1>
+	
+	</header>
 
 
 	<form action="displayUpdatedAnimal.do" modelAttribute="animal" method="POST">
@@ -23,12 +27,12 @@
 		<input type="text"
 			name="image" value="${animal.image}"/> 
 			<br> 
-			<input type="submit" value="Update Animal"/>
+			<input type="submit" value="Update Animal" class="btn"/>
 	</form>
 
 	<hr>
 	<form action="/" method="GET">
-		<input type="submit" value="Return Home" />
+		<input type="submit" value="Return Home" class="btn"/>
 	</form>
 
 </body>

@@ -34,7 +34,7 @@
 		  	</c:forEach>
 		  </ul>
 		  <ul>
-		  <h2>Yellowstone Recent Sightings</h2>
+		  <h2>Recent Sightings</h2>
 		  	<c:forEach var="s" items="${sightings}">
 		  		<li><a href="getSighting.do?sid=${s.id}">${s.dateSeen}</a></li>
 		  	</c:forEach>
