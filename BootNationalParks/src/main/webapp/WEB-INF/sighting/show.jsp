@@ -44,6 +44,12 @@
 				<img src="${animal.image }" height="200px">
 				<p>${animal.description}</p>
 			</c:when>
+		<c:when test="${ not empty flower}">
+				<h3>${flower.name}</h3>
+				<img src="${flower.image}" height="200px"/>
+				<h3>${flower.location }</h3>
+				<h4>${flower.bloomingPeriod }</h4>
+			</c:when>
 		<c:otherwise>
 			<h2>No sightings so far</h2>
 		</c:otherwise>	

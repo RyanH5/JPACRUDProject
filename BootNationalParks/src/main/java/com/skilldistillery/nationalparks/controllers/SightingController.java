@@ -76,6 +76,8 @@ public class SightingController {
 			dao.addNewSighting(sighting);
 			model.addObject("animal", animalDAO.findById(id));
 		}	else {
+			flowerDAO.findById(id).addSighting(sighting);
+			dao.addNewSighting(sighting);
 			model.addObject("flower", flowerDAO.findById(id));
 		}
 		System.out.println(model);
