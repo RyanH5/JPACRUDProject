@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>New Sighting</title>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet" type="text/css" href="show.css">
 </head>
 <body>
 	<c:choose>
@@ -24,7 +25,7 @@
 			</c:if>
 			<c:if test="${ not empty flower}">
 				<h3>${flower.name}</h3>
-				<img src="${flower.image}" />
+				<img src="${flower.image}" height="200px"/>
 				<h3>${flower.location }</h3>
 				<h4>${flower.bloomingPeriod }</h4>
 			</c:if>

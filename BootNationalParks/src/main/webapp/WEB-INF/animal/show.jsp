@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>The Animal</title>
+<link rel="stylesheet" type="text/css" href="show.css">
 </head>
 <body>
 	<div>
