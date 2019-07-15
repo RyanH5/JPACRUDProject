@@ -20,7 +20,7 @@
 			</form>
 			<form action="getUpdatedFlower.do" method="GET">
 				<input type="hidden" name="wfid" value="${flower.id}" />
-				<input type="submit" value="Update This Flower" />
+				<input type="submit" value="Update This Flower" class="btn"/>
 			</form>
  			<form action="getDeletedFlower.do" method="GET">
 				<input type="hidden" name="wfid" value="${flower.id}" class="btn"/>
