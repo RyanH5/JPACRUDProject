@@ -39,6 +39,11 @@
 				<h4>${flower.bloomingPeriod }</h4>
 			</c:if>	
 		</c:when>
+		<c:when test="${ not empty animal}">
+				<h5>${animal.name}</h5>
+				<img src="${animal.image }" height="200px">
+				<p>${animal.description}</p>
+			</c:when>
 		<c:otherwise>
 			<h2>No sightings so far</h2>
 		</c:otherwise>	
