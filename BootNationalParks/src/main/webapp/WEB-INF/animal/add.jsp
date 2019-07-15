@@ -5,10 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>New Animal</title>
+<link rel="stylesheet" type="text/css" href="add.css">
 </head>
 <body>
-
-<h1>What new animal did you find?</h1>
+	<header>
+		<h1>What new animal did you find?</h1>
+	</header>
 
 <form action="newAnimal.do" method="POST">
    <label for="name">Name:</label>
@@ -20,11 +22,10 @@
    <label for="image">Image-url:</label>
    <input type="text" name="image" placeholder="https://yourimage.com">
    <br>
-   <input type="submit" value="Add Animal">
+   <input type="submit" value="Add Animal" class="btn">
  </form>
- <hr>
  <form action="/" method="GET">
-  	<input type="submit" value="Return Home" />
+  	<input type="submit" value="Return Home" class="btn"/>
 </form>
 
 </body>

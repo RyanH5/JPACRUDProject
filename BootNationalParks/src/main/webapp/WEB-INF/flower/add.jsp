@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="add.css">
 </head>
 <body>
+<header>
 	<h1>What new animal did you find?</h1>
+</header>
 
 	<form action="newWildFlower.do" method="POST">
 	   <label for="name">Name:</label>
@@ -22,11 +25,10 @@
 	   <label for="bloomingPeriod">Blooming Period:</label>
 	   <input type="text" name="bloomingPeriod" placeholder="May-September">
 	   <br>
-	   <input type="submit" value="Add Wild Flower">
+	   <input type="submit" value="Add Wild Flower" class="btn">
 	 </form>
- 	<hr>
  	<form action="/" method="GET">
-  		<input type="submit" value="Return Home" />
+  		<input type="submit" value="Return Home" class="btn"/>
 	</form>
 </body>
 </html>

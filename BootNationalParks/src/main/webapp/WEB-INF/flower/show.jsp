@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="show.css">
 </head>
 <body>
 	<div>
@@ -15,15 +16,15 @@
 	</div>
 	<div class="btns-container">
 			<form action="goHome.do" method="GET">
-				<input type="submit" value="Return Home" />
+				<input type="submit" value="Return Home" class="btn"/>
 			</form>
 			<form action="getUpdatedFlower.do" method="GET">
 				<input type="hidden" name="wfid" value="${flower.id}" />
 				<input type="submit" value="Update This Flower" />
 			</form>
  			<form action="getDeletedFlower.do" method="GET">
-				<input type="hidden" name="wfid" value="${flower.id}" />
-				<input type="submit" value="Delete Flower" />
+				<input type="hidden" name="wfid" value="${flower.id}" class="btn"/>
+				<input type="submit" value="Delete Flower" class="btn"/>
 			</form>
 		</div>
 
