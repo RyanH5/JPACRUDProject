@@ -18,17 +18,17 @@
 				<img src="${animal.image }" height="200px">
 				<p>${animal.description}</p>
 			</c:if>
-			<c:if test="${ not empty animal}">
+			<%-- <c:if test="${ not empty animal}">
 				<h5>${animal.name}</h5>
 				<img src="${animal.image }" height="200px">
 				<p>${animal.description}</p>
-			</c:if>
-			<c:if test="${ not empty flower}">
+			</c:if> --%>
+		<%-- 	<c:if test="${ not empty flower}">
 				<h3>${flower.name}</h3>
 				<img src="${flower.image}" height="200px"/>
 				<h3>${flower.location }</h3>
 				<h4>${flower.bloomingPeriod }</h4>
-			</c:if>
+			</c:if> --%>
 			<!--  THIS WAS TRICKY Sighting must have a field of the thing you empty check, 
 			AKA check for wildflowers NOT flower-->
  			<c:if test="${not empty sighting.wildFlowers}">
@@ -39,6 +39,17 @@
 				<h4>${flower.bloomingPeriod }</h4>
 			</c:if>	
 		</c:when>
+		<c:when test="${ not empty animal}">
+				<h5>${animal.name}</h5>
+				<img src="${animal.image }" height="200px">
+				<p>${animal.description}</p>
+			</c:when>
+		<c:when test="${ not empty flower}">
+				<h3>${flower.name}</h3>
+				<img src="${flower.image}" height="200px"/>
+				<h3>${flower.location }</h3>
+				<h4>${flower.bloomingPeriod }</h4>
+			</c:when>
 		<c:otherwise>
 			<h2>No sightings so far</h2>
 		</c:otherwise>	
